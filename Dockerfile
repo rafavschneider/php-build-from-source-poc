@@ -1,7 +1,7 @@
-FROM ubuntu
+FROM alpine
 
-RUN apt update \
-    && apt install -y wget pkg-config build-essential autoconf bison re2c libxml2-dev libsqlite3-dev
+RUN apk update \
+    && apk add wget build-base pkgconf autoconf bison re2c libxml2-dev sqlite-dev
 
 WORKDIR /usr/src/php-build
 RUN wget https://www.php.net/distributions/php-8.3.8.tar.gz \
